@@ -1,20 +1,17 @@
 //
-//  BCImageProcessor.m
+//  UIImage+BlurAndDarken.m
 //  CoreImageDemo
 //
 //  Created by Bryan Clark on 3/17/13.
 //  Copyright (c) 2013 Bryan Clark. All rights reserved.
 //
 
-#import "BCImageProcessor.h"
+#import "UIImage+BlurAndDarken.h"
 
-#import <CoreImage/CoreImage.h>
+@implementation UIImage (BlurAndDarken)
 
-@implementation BCImageProcessor
-
-+ (UIImage *)darkenedAndBlurredImageForImage:(UIImage *)image
-{    
-    CIImage *inputImage = [[CIImage alloc] initWithImage:image];
+-(instancetype)darkenedAndBlurredImage {
+    CIImage *inputImage = [[CIImage alloc] initWithImage:self];
     
     CIContext *context = [CIContext contextWithOptions:nil];
     

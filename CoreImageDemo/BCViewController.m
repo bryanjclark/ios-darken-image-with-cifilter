@@ -7,7 +7,7 @@
 //
 
 #import "BCViewController.h"
-#import "BCImageProcessor.h"
+#import "UIImage+BlurAndDarken.h"
 
 @interface BCViewController ()
 
@@ -23,9 +23,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    _beforeImageView.image = [UIImage imageNamed:@"testJPG.jpg"];
+    UIImage *image = [UIImage imageNamed:@"testJPG.jpg"];
     
-    _afterImageView.image = [BCImageProcessor darkenedAndBlurredImageForImage:[UIImage imageNamed:@"testJPG.jpg"]];
+    _beforeImageView.image = image;
+    
+    _afterImageView.image = [image darkenedAndBlurredImage];
     
 }
 
