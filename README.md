@@ -5,20 +5,20 @@ I was frustrated trying to get a CIFilter that'd work to darken an image by 50% 
 
 Here's the code that does the magic:
 ```objectivec
-+ (UIImage *)darkenedAndBlurredImageForImage:(UIImage *)image
-{    
-    CIImage *inputImage = [[CIImage alloc] initWithImage:image];
+-(instancetype)darkened:(CGFloat)alpha andBlurredImage:(CGFloat)radius blendModeFilterName:(NSString *)blendModeFilterName {
+    
+    CIImage *inputImage = [[CIImage alloc] initWithImage:self];
     
     CIContext *context = [CIContext contextWithOptions:nil];
     
     //First, create some darkness
     CIFilter* blackGenerator = [CIFilter filterWithName:@"CIConstantColorGenerator"];
-    CIColor* black = [CIColor colorWithString:@"0.0 0.0 0.0 0.6"];
+    CIColor* black = [CIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:alpha];
     [blackGenerator setValue:black forKey:@"inputColor"];
     CIImage* blackImage = [blackGenerator valueForKey:@"outputImage"];
     
     //Second, apply that black
-    CIFilter *compositeFilter = [CIFilter filterWithName:@"CIMultiplyBlendMode"];
+    CIFilter *compositeFilter = [CIFilter filterWithName:blendModeFilterName];
     [compositeFilter setValue:blackImage forKey:@"inputImage"];
     [compositeFilter setValue:inputImage forKey:@"inputBackgroundImage"];
     CIImage *darkenedImage = [compositeFilter outputImage];
@@ -26,7 +26,7 @@ Here's the code that does the magic:
     //Third, blur the image
     CIFilter *blurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
     [blurFilter setDefaults];
-    [blurFilter setValue:@16.0 forKey:@"inputRadius"];
+    [blurFilter setValue:@(radius) forKey:@"inputRadius"];
     [blurFilter setValue:darkenedImage forKey:kCIInputImageKey];
     CIImage *blurredImage = [blurFilter outputImage];
     
