@@ -10,6 +10,8 @@
 
 @interface UIImage (BlurAndDarken)
 
+-(instancetype)darkened:(CGFloat)alpha andBlurredImage:(CGFloat)radius blendModeFilterName:(NSString *)blendModeFilterName;
+-(instancetype)darkened:(CGFloat)alpha andBlurredImage:(CGFloat)radius;
 -(instancetype)darkenedAndBlurredImage;
 
 @end
