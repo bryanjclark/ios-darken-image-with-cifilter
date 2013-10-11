@@ -19,8 +19,8 @@
 		539E752216F6E1DB00B7A3C8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539E752016F6E1DB00B7A3C8 /* MainStoryboard.storyboard */; };
 		539E752516F6E1DB00B7A3C8 /* BCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539E752416F6E1DB00B7A3C8 /* BCViewController.m */; };
 		539E752C16F6E2DE00B7A3C8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539E752B16F6E2DE00B7A3C8 /* CoreImage.framework */; };
-		539E753216F6E80900B7A3C8 /* testJPG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 539E753116F6E80900B7A3C8 /* testJPG.jpg */; };
 		539E753516F6E83000B7A3C8 /* BCImageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 539E753416F6E83000B7A3C8 /* BCImageProcessor.m */; };
+		5ECC32AD18077C6C00542B10 /* testJPG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ECC32AC18077C6C00542B10 /* testJPG.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,9 +41,9 @@
 		539E752316F6E1DB00B7A3C8 /* BCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCViewController.h; sourceTree = "<group>"; };
 		539E752416F6E1DB00B7A3C8 /* BCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCViewController.m; sourceTree = "<group>"; };
 		539E752B16F6E2DE00B7A3C8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
-		539E753116F6E80900B7A3C8 /* testJPG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = testJPG.jpg; path = ../../../../Desktop/testJPG.jpg; sourceTree = "<group>"; };
 		539E753316F6E83000B7A3C8 /* BCImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCImageProcessor.h; sourceTree = "<group>"; };
 		539E753416F6E83000B7A3C8 /* BCImageProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCImageProcessor.m; sourceTree = "<group>"; };
+		5ECC32AC18077C6C00542B10 /* testJPG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testJPG.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,6 @@
 		539E74FC16F6E1DB00B7A3C8 = {
 			isa = PBXGroup;
 			children = (
-				539E752B16F6E2DE00B7A3C8 /* CoreImage.framework */,
 				539E750E16F6E1DB00B7A3C8 /* CoreImageDemo */,
 				539E750716F6E1DB00B7A3C8 /* Frameworks */,
 				539E750616F6E1DB00B7A3C8 /* Products */,
@@ -82,6 +81,7 @@
 		539E750716F6E1DB00B7A3C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				539E752B16F6E2DE00B7A3C8 /* CoreImage.framework */,
 				539E750816F6E1DB00B7A3C8 /* UIKit.framework */,
 				539E750A16F6E1DB00B7A3C8 /* Foundation.framework */,
 				539E750C16F6E1DB00B7A3C8 /* CoreGraphics.framework */,
@@ -97,9 +97,9 @@
 				539E752016F6E1DB00B7A3C8 /* MainStoryboard.storyboard */,
 				539E752316F6E1DB00B7A3C8 /* BCViewController.h */,
 				539E752416F6E1DB00B7A3C8 /* BCViewController.m */,
-				539E753116F6E80900B7A3C8 /* testJPG.jpg */,
 				539E753316F6E83000B7A3C8 /* BCImageProcessor.h */,
 				539E753416F6E83000B7A3C8 /* BCImageProcessor.m */,
+				5ECC32AC18077C6C00542B10 /* testJPG.jpg */,
 				539E750F16F6E1DB00B7A3C8 /* Supporting Files */,
 			);
 			path = CoreImageDemo;
@@ -172,11 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				539E751316F6E1DB00B7A3C8 /* InfoPlist.strings in Resources */,
+				5ECC32AD18077C6C00542B10 /* testJPG.jpg in Resources */,
 				539E751B16F6E1DB00B7A3C8 /* Default.png in Resources */,
 				539E751D16F6E1DB00B7A3C8 /* Default@2x.png in Resources */,
 				539E751F16F6E1DB00B7A3C8 /* Default-568h@2x.png in Resources */,
 				539E752216F6E1DB00B7A3C8 /* MainStoryboard.storyboard in Resources */,
-				539E753216F6E80900B7A3C8 /* testJPG.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +313,7 @@
 				539E752A16F6E1DB00B7A3C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
