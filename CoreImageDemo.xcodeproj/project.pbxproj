@@ -19,6 +19,7 @@
 		539E752216F6E1DB00B7A3C8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 539E752016F6E1DB00B7A3C8 /* MainStoryboard.storyboard */; };
 		539E752516F6E1DB00B7A3C8 /* BCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 539E752416F6E1DB00B7A3C8 /* BCViewController.m */; };
 		539E752C16F6E2DE00B7A3C8 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539E752B16F6E2DE00B7A3C8 /* CoreImage.framework */; };
+		53FC0624180863E9002AA71F /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 53FC0623180863E9002AA71F /* LICENSE.txt */; };
 		5ECC32AD18077C6C00542B10 /* testJPG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5ECC32AC18077C6C00542B10 /* testJPG.jpg */; };
 		5ECC32B018077CFD00542B10 /* UIImage+BlurAndDarken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECC32AF18077CFD00542B10 /* UIImage+BlurAndDarken.m */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		539E752316F6E1DB00B7A3C8 /* BCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCViewController.h; sourceTree = "<group>"; };
 		539E752416F6E1DB00B7A3C8 /* BCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BCViewController.m; sourceTree = "<group>"; };
 		539E752B16F6E2DE00B7A3C8 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		53FC0623180863E9002AA71F /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = CoreImageDemo/LICENSE.txt; sourceTree = "<group>"; };
 		5ECC32AC18077C6C00542B10 /* testJPG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testJPG.jpg; sourceTree = "<group>"; };
 		5ECC32AE18077CFD00542B10 /* UIImage+BlurAndDarken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BlurAndDarken.h"; sourceTree = SOURCE_ROOT; };
 		5ECC32AF18077CFD00542B10 /* UIImage+BlurAndDarken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BlurAndDarken.m"; sourceTree = SOURCE_ROOT; };
@@ -64,6 +66,7 @@
 		539E74FC16F6E1DB00B7A3C8 = {
 			isa = PBXGroup;
 			children = (
+				53FC0623180863E9002AA71F /* LICENSE.txt */,
 				539E750E16F6E1DB00B7A3C8 /* CoreImageDemo */,
 				539E750716F6E1DB00B7A3C8 /* Frameworks */,
 				539E750616F6E1DB00B7A3C8 /* Products */,
@@ -177,6 +180,7 @@
 				539E751D16F6E1DB00B7A3C8 /* Default@2x.png in Resources */,
 				539E751F16F6E1DB00B7A3C8 /* Default-568h@2x.png in Resources */,
 				539E752216F6E1DB00B7A3C8 /* MainStoryboard.storyboard in Resources */,
+				53FC0624180863E9002AA71F /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
