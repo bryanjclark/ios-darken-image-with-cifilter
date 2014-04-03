@@ -16,16 +16,24 @@
     
     CIContext *context = [CIContext contextWithOptions:nil];
     
-    //First, create some darkness
+    //First, we'll use CIAffineClamp to prevent black edges on our blurred image
+    //CIAffineClamp extends the edges off to infinity (check the docs, yo)
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    CIFilter *clampFilter = [CIFilter filterWithName:@"CIAffineClamp"];
+    [clampFilter setValue:inputImage forKeyPath:kCIInputImageKey];
+    [clampFilter setValue:[NSValue valueWithBytes:&transform objCType:@encode(CGAffineTransform)] forKeyPath:@"inputTransform"];
+    CIImage *clampedImage = [clampFilter outputImage];
+    
+    //Next, create some darkness
     CIFilter* blackGenerator = [CIFilter filterWithName:@"CIConstantColorGenerator"];
     CIColor* black = [CIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:alpha];
     [blackGenerator setValue:black forKey:@"inputColor"];
     CIImage* blackImage = [blackGenerator valueForKey:@"outputImage"];
     
-    //Second, apply that black
+    //Apply that black
     CIFilter *compositeFilter = [CIFilter filterWithName:blendModeFilterName];
     [compositeFilter setValue:blackImage forKey:@"inputImage"];
-    [compositeFilter setValue:inputImage forKey:@"inputBackgroundImage"];
+    [compositeFilter setValue:clampedImage forKey:@"inputBackgroundImage"];
     CIImage *darkenedImage = [compositeFilter outputImage];
     
     //Third, blur the image
