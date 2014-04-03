@@ -11,16 +11,24 @@ Here's the code that does the magic:
     
     CIContext *context = [CIContext contextWithOptions:nil];
     
-    //First, create some darkness
+    //First, we'll use CIAffineClamp to prevent black edges on our blurred image
+    //CIAffineClamp extends the edges off to infinity (check the docs, yo)
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    CIFilter *clampFilter = [CIFilter filterWithName:@"CIAffineClamp"];
+    [clampFilter setValue:inputImage forKeyPath:kCIInputImageKey];
+    [clampFilter setValue:[NSValue valueWithBytes:&transform objCType:@encode(CGAffineTransform)] forKeyPath:@"inputTransform"];
+    CIImage *clampedImage = [clampFilter outputImage];
+    
+    //Next, create some darkness
     CIFilter* blackGenerator = [CIFilter filterWithName:@"CIConstantColorGenerator"];
     CIColor* black = [CIColor colorWithRed:0.0f green:0.0f blue:0.0f alpha:alpha];
     [blackGenerator setValue:black forKey:@"inputColor"];
     CIImage* blackImage = [blackGenerator valueForKey:@"outputImage"];
     
-    //Second, apply that black
+    //Apply that black
     CIFilter *compositeFilter = [CIFilter filterWithName:blendModeFilterName];
     [compositeFilter setValue:blackImage forKey:@"inputImage"];
-    [compositeFilter setValue:inputImage forKey:@"inputBackgroundImage"];
+    [compositeFilter setValue:clampedImage forKey:@"inputBackgroundImage"];
     CIImage *darkenedImage = [compositeFilter outputImage];
     
     //Third, blur the image
@@ -39,4 +47,4 @@ Here's the code that does the magic:
 ```
 
 In a few lines of code, YOU TOO can witness this miracle transformation:
-![iOS Screenshot](http://f.cl.ly/items/1S2q102q3d2G41232q3V/iOS%20Simulator%20Screen%20shot%20Apr%203,%202013%2011.58.28%20AM.png)
+![iOS Screenshot](http://clrk.it/image/3v070D1n3S2u/core%20image%20demo%20image.png)
